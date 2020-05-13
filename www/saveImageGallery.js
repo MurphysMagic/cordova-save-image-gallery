@@ -1,4 +1,3 @@
-cordova.define("cordova-save-image-gallery.saveImageGallery", function(require, exports, module) {
 /**
  * @file saveImageGallery PhoneGap/Cordova plugin
  * @author Alejandro Gómez <agommor@gmail.com>
@@ -181,5 +180,3 @@ function prepareSaveBase64Args(options) {
 window.ImageSaver = ImageSaver;
 window.imageSaver = new ImageSaver();
 module.exports = new ImageSaver();
-
-});
