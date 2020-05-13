@@ -75,14 +75,14 @@
                     // add the image to camera roll
                     UIImage * savedImage = [UIImage imageWithContentsOfFile : imagePath];
                     
-                    //[[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-                    //    PHAssetChangeRequest *changeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:savedImage];
-                    //    changeRequest.creationDate          = [NSDate dateWithTimeIntervalSince1970:masodpercek];
-                    //} completionHandler:^(BOOL success, NSError *error) {
+                    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+                        PHAssetChangeRequest *changeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:savedImage];
+                        changeRequest.creationDate          = [NSDate dateWithTimeIntervalSince1970:masodpercek];
+                    } completionHandler:^(BOOL success, NSError *error) {
                         //
-                    //}];
+                    }];
                     
-                    UIImageWriteToSavedPhotosAlbum(savedImage, nil, nil, nil);
+                    //UIImageWriteToSavedPhotosAlbum(savedImage, nil, nil, nil);
                 }
                 // adding file:// prefix
                 NSString *fullImagePath = [@"file://" stringByAppendingPathComponent : imagePath];
