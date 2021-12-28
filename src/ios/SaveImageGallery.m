@@ -25,7 +25,7 @@
         bool cameraRoll = [[command.arguments objectAtIndex : 2] boolValue];
         NSString *format = [command.arguments objectAtIndex : 3];
         NSInteger quality = [[command.arguments objectAtIndex : 4] integerValue];
-        CGFloat masodpercek = [[command.arguments objectAtIndex : 5] floatValue];
+        CGFloat timestamp = [[command.arguments objectAtIndex : 5] floatValue];
         
         if (base64String != nil && [base64String length] > 0) {
             
@@ -77,7 +77,7 @@
                     
                     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
                         PHAssetChangeRequest *changeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:savedImage];
-                        changeRequest.creationDate          = [NSDate dateWithTimeIntervalSince1970:masodpercek];
+                        changeRequest.creationDate          = [NSDate dateWithTimeIntervalSince1970:timestamp];
                     } completionHandler:^(BOOL success, NSError *error) {
                         //
                     }];
